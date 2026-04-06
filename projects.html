@@ -102,6 +102,15 @@
       background: var(--off-white); border: 1px solid var(--light-grey);
       padding: 0.2rem 0.6rem; border-radius: 2px;
     }
+    a.tool-chip {
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+a.tool-chip:hover {
+  background: var(--accent-light);
+  color: var(--accent);
+  border-color: var(--accent);
+}
     .project-link {
       display: inline-flex; align-items: center; gap: 0.4rem;
       font-size: 0.85rem; font-weight: 500; color: var(--accent);
@@ -123,7 +132,7 @@
 <body>
 
   <nav>
-    <a href="index.html" class="nav-logo">Your Name</a>
+    <a href="index.html" class="nav-logo">Smriti M</a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html" class="active">Projects</a></li>
@@ -133,7 +142,7 @@
   </nav>
 
   <div class="page-header">
-    <p class="section-label">Selected Work</p>
+    <p class="section-label">Practical Work</p>
     <h1 class="section-title">Projects</h1>
     <div class="section-divider"></div>
   </div>
@@ -141,33 +150,34 @@
   <div class="projects-grid">
 
     <div class="project-card reveal">
-      <span class="project-tag">Valuation</span>
-      <h3 class="project-title">DCF Model — Tech Sector</h3>
-      <p class="project-desc">Built a full discounted cash flow model for a listed tech company, including revenue projections, WACC calculation, and sensitivity analysis across key assumptions.</p>
-      <div class="project-tools">
-        <span class="tool-chip">Excel</span><span class="tool-chip">Financial Modelling</span><span class="tool-chip">Valuation</span>
+      <span class="project-tag">M&A</span>
+      <h3 class="project-title">Deal Analysis - Gaming Sector</h3>
+      <p class="project-desc">Built an M&A Excel model and deck analysing the deal synergies between Microsoft Gaming and Activision Blizzard.</p>
+        <div class="project-tools">
+          <a href="projects/your-excel-file.xlsx" class="tool-chip" target="_blank">Excel ↗</a>
+          <a href="projects/your-deck.pdf" class="tool-chip" target="_blank">Deck ↗</a>
+          <a href="projects/your-report.pdf" class="tool-chip" target="_blank">Report ↗</a>
       </div>
-      <a href="projects/dcf-model.pdf" class="project-link">View Project →</a>
     </div>
 
     <div class="project-card reveal">
-      <span class="project-tag">Equity Research</span>
-      <h3 class="project-title">Initiation of Coverage Report</h3>
-      <p class="project-desc">Wrote a 15-page equity research report on a mid-cap Indian company, covering business analysis, financial modelling, and a 12-month price target.</p>
-      <div class="project-tools">
-        <span class="tool-chip">Excel</span><span class="tool-chip">PowerPoint</span><span class="tool-chip">Bloomberg</span>
+      <span class="project-tag">Company Strategy</span>
+      <h3 class="project-title">Pricing Matrix</h3>
+      <p class="project-desc">The following Excel file and deck explain the pricing and product strategies I recommended to a cloud-kitchen to maximise profits.</p>
+        <div class="project-tools">
+          <a href="projects/your-excel-file.xlsx" class="tool-chip" target="_blank">Excel ↗</a>
+          <a href="projects/your-deck.pdf" class="tool-chip" target="_blank">Deck ↗</a>
       </div>
-      <a href="projects/equity-report.pdf" class="project-link">View Project →</a>
     </div>
 
     <div class="project-card reveal">
-      <span class="project-tag">Data Analysis</span>
-      <h3 class="project-title">Portfolio Risk Analysis</h3>
-      <p class="project-desc">Analysed a 10-stock equity portfolio using Python — calculated returns, volatility, Sharpe ratio, and visualised the efficient frontier using modern portfolio theory.</p>
-      <div class="project-tools">
-        <span class="tool-chip">Python</span><span class="tool-chip">Pandas</span><span class="tool-chip">Matplotlib</span>
+      <span class="project-tag">M&A</span>
+      <h3 class="project-title">Deal Analysis - Scenario Based</h3>
+      <p class="project-desc">As a part of the BIA Finance course, following is the solved deal analysis between two hypothetical companies in a given scenario.</p>
+        <div class="project-tools">
+          <a href="projects/your-excel-file.xlsx" class="tool-chip" target="_blank">Excel ↗</a>
+          <a href="projects/your-deck.pdf" class="tool-chip" target="_blank">Deck ↗</a>
       </div>
-      <a href="projects/portfolio-analysis.html" class="project-link">View Project →</a>
     </div>
 
     <div class="project-card reveal">
@@ -175,9 +185,10 @@
       <h3 class="project-title">Merger Model — LBO Case Study</h3>
       <p class="project-desc">Modelled a leveraged buyout scenario including purchase price, debt structure, exit assumptions, and IRR/MOIC analysis for a private equity case study.</p>
       <div class="project-tools">
-        <span class="tool-chip">Excel</span><span class="tool-chip">LBO Modelling</span><span class="tool-chip">M&A</span>
+          <a href="projects/your-excel-file.xlsx" class="tool-chip" target="_blank">Excel ↗</a>
+          <a href="projects/your-deck.pdf" class="tool-chip" target="_blank">Deck ↗</a>
+          <a href="projects/your-report.pdf" class="tool-chip" target="_blank">Report ↗</a>
       </div>
-      <a href="projects/lbo-model.pdf" class="project-link">View Project →</a>
     </div>
 
     <div class="project-card reveal">
@@ -203,7 +214,7 @@
   </div>
 
   <footer>
-    <p>© 2026 Your Name. All rights reserved.</p>
+    <p>© 2026 Smriti M. All rights reserved.</p>
     <a href="index.html">← Back to Home</a>
   </footer>
 
