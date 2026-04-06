@@ -159,21 +159,20 @@
     .photo-upload-area {
       width: 100%; aspect-ratio: 3/4;
       background: var(--off-white);
-      border: 2px dashed var(--mid-grey);
+      border: none;
       border-radius: 6px;
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
       gap: 0.75rem;
       margin-bottom: 1.5rem;
       position: relative; overflow: hidden;
-      cursor: pointer;
+      cursor: default;
       transition: border-color 0.2s, background 0.2s;
     }
-    .photo-upload-area:hover { border-color: var(--accent); background: var(--accent-light); }
     .photo-upload-area img#preview {
       position: absolute; inset: 0;
       width: 100%; height: 100%; object-fit: cover;
-      display: none; border-radius: 4px;
+      display: block; border-radius: 4px;
     }
     .photo-upload-area.has-photo .upload-hint { display: none; }
     .photo-upload-area.has-photo img#preview { display: block; }
@@ -251,7 +250,7 @@
 <body>
 
   <nav>
-    <a href="index.html" class="nav-logo">Your Name</a>
+    <a href="index.html" class="nav-logo">Smriti M</a>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
@@ -280,8 +279,8 @@
       <div class="about-left">
 
         <!-- Photo upload area -->
-      <div class="photo-upload-area" id="photoArea">
-       <img id="preview" src="Professional_Photo.jpeg" alt="Smriti M" />
+      <div class="photo-upload-area has-photo" id="photoArea">
+       <img id="preview" src="photo.jpeg" alt="Smriti M" />
       </div>
 
         <div class="about-socials">
@@ -298,14 +297,14 @@
           I'm Smriti M, a 2025 Bachelor of Business Administration graduate student from Mahindra University, Hyderabad and a current Master's student, pursuing Finance in greater depth.
         </p>
         <p>
-          My educational background not only strengthened my technical financial skills, but helped me do so from a business's perspective while consodering various economic changes that happen on a daily basis. 
+          My educational background not only strengthened my technical financial skills, but helped me do so from a business's perspective while considering various economic changes that happen on a daily basis. 
         </p>
         <p>
           I'm currently looking for opportunities across investment banking and corporate finance where I can contribute analytical lens to high-stakes decisions.
         </p>
         <div class="about-highlights">
           <div class="highlight-card">
-            <div class="number">f+</div>
+            <div class="number">6+</div>
             <div class="label">Projects Completed</div>
           </div>
           <div class="highlight-card">
@@ -331,20 +330,6 @@
       });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
-
-    // Photo preview
-    function previewPhoto(event) {
-      const file = event.target.files[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const preview = document.getElementById('preview');
-        const area = document.getElementById('photoArea');
-        preview.src = e.target.result;
-        area.classList.add('has-photo');
-      };
-      reader.readAsDataURL(file);
-    }
   </script>
 </body>
 </html>
