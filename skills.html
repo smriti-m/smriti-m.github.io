@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills — Your Name</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --white: #ffffff; --off-white: #f7f6f3; --light-grey: #ebebeb;
+      --mid-grey: #c8c8c8; --text-dark: #1a1a1a; --text-mid: #555555;
+      --text-light: #888888; --accent: #2d5a3d; --accent-light: #e8f0ea;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif; background: var(--white);
+      color: var(--text-dark); font-size: 16px; line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 5%;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--light-grey);
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif; font-size: 1.2rem;
+      color: var(--text-dark); text-decoration: none; letter-spacing: -0.02em;
+    }
+    .nav-links { display: flex; gap: 0.5rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--text-mid); font-size: 0.82rem;
+      font-weight: 500; letter-spacing: 0.03em;
+      padding: 0.45rem 1.1rem; border-radius: 999px;
+      border: 1.5px solid transparent; transition: all 0.2s;
+    }
+    .nav-links a:hover { border-color: var(--light-grey); color: var(--text-dark); }
+    .nav-links a.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 7rem 5% 3rem;
+      background: var(--white); border-bottom: 1px solid var(--light-grey);
+    }
+    .section-label {
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      letter-spacing: -0.025em; color: var(--text-dark); margin-bottom: 1rem;
+    }
+    .section-divider { width: 40px; height: 2px; background: var(--accent); }
+
+    /* ── SKILLS ── */
+    .skills-content { padding: 3rem 5% 5rem; }
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem; max-width: 1200px;
+    }
+
+    .skill-group {
+      border: 1px solid var(--light-grey); border-radius: 4px;
+      padding: 1.75rem; background: var(--white);
+    }
+    .skill-group.full-width { grid-column: 1 / -1; }
+
+    .skill-group-title {
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-light);
+      margin-bottom: 1.25rem; padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--light-grey);
+    }
+    .skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .skill-list li {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.92rem; color: var(--text-mid);
+    }
+    .skill-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0;
+    }
+    .coursework-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0.6rem 3rem; list-style: none;
+    }
+    .coursework-grid li {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.92rem; color: var(--text-mid);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111; padding: 1.75rem 5%;
+      display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid #222;
+    }
+    footer p { font-size: 0.82rem; color: #555; }
+    footer a { font-size: 0.82rem; color: #555; text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: #7ab892; }
+
+    @media (max-width: 600px) {
+      .coursework-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Your Name</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html" class="active">Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <p class="section-label">What I Work With</p>
+    <h1 class="section-title">Skills</h1>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="skills-content">
+    <div class="skills-layout">
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Financial Modelling</div>
+        <ul class="skill-list">
+          <li><span class="skill-dot"></span>Discounted Cash Flow (DCF)</li>
+          <li><span class="skill-dot"></span>LBO Modelling</li>
+          <li><span class="skill-dot"></span>Merger &amp; Acquisition Models</li>
+          <li><span class="skill-dot"></span>Three-Statement Modelling</li>
+          <li><span class="skill-dot"></span>Sensitivity &amp; Scenario Analysis</li>
+        </ul>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Analysis &amp; Research</div>
+        <ul class="skill-list">
+          <li><span class="skill-dot"></span>Equity Research</li>
+          <li><span class="skill-dot"></span>Comparable Company Analysis</li>
+          <li><span class="skill-dot"></span>Precedent Transaction Analysis</li>
+          <li><span class="skill-dot"></span>Credit Analysis</li>
+          <li><span class="skill-dot"></span>Industry &amp; Macro Research</li>
+        </ul>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Tools &amp; Software</div>
+        <ul class="skill-list">
+          <li><span class="skill-dot"></span>Microsoft Excel (Advanced)</li>
+          <li><span class="skill-dot"></span>PowerPoint</li>
+          <li><span class="skill-dot"></span>Python (Pandas, NumPy)</li>
+          <li><span class="skill-dot"></span>Power BI</li>
+          <li><span class="skill-dot"></span>Bloomberg Terminal</li>
+        </ul>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Accounting &amp; Finance</div>
+        <ul class="skill-list">
+          <li><span class="skill-dot"></span>Financial Statement Analysis</li>
+          <li><span class="skill-dot"></span>Corporate Valuation</li>
+          <li><span class="skill-dot"></span>FP&amp;A / Budgeting</li>
+          <li><span class="skill-dot"></span>Capital Markets</li>
+          <li><span class="skill-dot"></span>Risk Management</li>
+        </ul>
+      </div>
+
+      <!-- CORE COURSEWORK — full width -->
+      <div class="skill-group full-width reveal">
+        <div class="skill-group-title">Core Coursework</div>
+        <ul class="coursework-grid">
+          <li><span class="skill-dot"></span>Corporate Finance &amp; Capital Structure</li>
+          <li><span class="skill-dot"></span>Financial Statement Analysis &amp; Reporting</li>
+          <li><span class="skill-dot"></span>Equity Valuation &amp; Investment Analysis</li>
+          <li><span class="skill-dot"></span>Fixed Income Securities &amp; Bond Markets</li>
+          <li><span class="skill-dot"></span>Derivatives &amp; Risk Management</li>
+          <li><span class="skill-dot"></span>Mergers, Acquisitions &amp; Restructuring</li>
+          <li><span class="skill-dot"></span>Portfolio Management &amp; Asset Allocation</li>
+          <li><span class="skill-dot"></span>Macroeconomics &amp; Monetary Policy</li>
+          <li><span class="skill-dot"></span>Quantitative Methods &amp; Financial Econometrics</li>
+          <li><span class="skill-dot"></span>International Finance &amp; Foreign Exchange</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Your Name. All rights reserved.</p>
+    <a href="index.html">← Back to Home</a>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
